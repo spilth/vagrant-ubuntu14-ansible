@@ -1,0 +1,17 @@
+---
+- hosts: all
+  remote_user: vagrant
+  tasks:
+  - name: ensure apt cache is updated
+    apt: update_cache=yes
+  - name: ensure latest version of git is installed
+    apt: name=git state=latest
+  - name: ensure latest Open JDK 7 is installed
+    apt: name=openjdk-7-jre-headless state=latest
+  - name: ensure latest wget is installed
+    apt: name=wget state=latest
+  - name: ensure latest rbenv is installed
+    apt: name=rbenv state=latest
+  - name: ensure latest ruby-build is installed
+    apt: name=ruby-build state=latest
+
